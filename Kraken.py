@@ -3,7 +3,7 @@
 """
 RELASE THE KRAKEN!!!
 If you release the kraken, it will find and destroy any folder or files you want to eliminate. 
-Gerardo - 10/16/2018
+10/16/2018
 """
 import sys
 import argparse
