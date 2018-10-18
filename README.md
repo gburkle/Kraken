@@ -7,7 +7,7 @@ Use it under your own risk.
  くコ:彡
  
 If you release the kraken, it will find and destroy any folder or files you want to eliminate. 
-Only Tested on Windows system. 
+(Only Tested on Windows system). 
 
 
 Current functionality: 
