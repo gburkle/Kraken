@@ -7,3 +7,5 @@ Use it under your own risk.
  くコ:彡
  
 If you release the kraken, it will find and destroy any folder or files you want to eliminate. 
+
+Function "YES/NO" from http://code.activestate.com/recipes/577058/
