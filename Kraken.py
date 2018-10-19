@@ -105,7 +105,7 @@ def find_folder(path, name):
 				print("\n!!! RLEASE THE KRAKEN !!!\n")
 				for folder in prey_found:
 					print("[*] Deleting ("+ folder +") .....", end="", flush=True)
-					result = delete_folder(folder)
+					result = devour_prey(folder)
 					print("["+result+"]")
 				
 			else:
@@ -142,7 +142,7 @@ def find_folder_force(path, name):
 		if found:
 			prey_found.append(path)
 			print("[*] Deleting ("+ path +") .....", end="", flush=True)
-			result = delete_folder(path)
+			result = devour_prey(path)
 			print("["+result+"]")
 		else:
 			continue
@@ -152,7 +152,7 @@ def find_folder_force(path, name):
 	else:
 		print("[*] The Kraken didn't find any folders with that name")		
 	
-def delete_folder(path):
+def devour_prey(path):
 	"DELETE FOUND FOLDERS"
 		
 	filehandle = open('kraken.log','a')
