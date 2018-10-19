@@ -3,7 +3,7 @@
 """
 RELASE THE KRAKEN!!!
 If you release the kraken, it will find and destroy any folder or files you want to eliminate. 
-10/16/2018
+Gerardo - 10/16/2018
 """
 import sys
 import argparse
@@ -125,10 +125,10 @@ def find_folder(path, name):
 
 def find_folder_force(path, name):
 	"This will search for the name of a folder, then delete all. No questions asked"
-	print("[+] Kraken will look for all instances of (" + name + ") inside the folder (" + path + ") and delete all findings. (NO QUESTIONS ASKED!!)\n")
+	print("[+] Kraken is looking for all instances of (" + name + ") inside the folder (" + path + ") and will delete all findings. (NO QUESTIONS ASKED!!)\n")
 	prey_found = []
 	
-	print("[*] The Kraken is looking for prey.\n")
+	print("\n!!! RLEASE THE KRAKEN !!!\n")
 	for path, listofdirs, listoffiles in os.walk(path):
 		#print("[*] Current Directory is :",path)
 		#print("			has directories:",listofdirs)
@@ -141,16 +141,14 @@ def find_folder_force(path, name):
 			
 		if found:
 			prey_found.append(path)
+			print("[*] Deleting ("+ path +") .....", end="", flush=True)
+			result = delete_folder(path)
+			print("["+result+"]")
 		else:
 			continue
 		
 	if prey_found:
-		print("[*] The Kraken found prey!!")
-		print("\n!!! RLEASE THE KRAKEN !!!\n")
-		for folder in prey_found:
-			print("[*] Deleting ("+ folder +") .....", end="", flush=True)
-			result = delete_folder(folder)
-			print("["+result+"]")
+		print("[*] All the prey has been devour!!")
 	else:
 		print("[*] The Kraken didn't find any folders with that name")		
 	
@@ -194,11 +192,11 @@ def query_yes_no(question, default="no"):
 	valid = {"yes": True, "y": True, "ye": True, "no": False, "n": False}
 	
 	if default is None:
-		prompt = " [y/n] " 
+		prompt = " [y/n]: " 
 	elif default == "yes":
-		prompt = " [Y/n] "
+		prompt = " [Y/n]: "
 	elif default == "no":
-		prompt = " [y/N] "
+		prompt = " [y/N]: "
 	else:
 		raise ValueError("Invalid default answer: '%s'" % default)
 	
