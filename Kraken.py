@@ -20,8 +20,8 @@ except:
 
 def main():
 	"Release the KRAKEN"
-	parser=argparse.ArgumentParser(description='Remove Files or Folders. (e.g. kraken -path "C:\Program Files" -F "some folder" OR kraken -path "C:\Program Files" -LF "folders.txt")')
-	parser.add_argument('--path',required=True,help='Directory path where to start looking. Use quotes (e.g. "C:\Program Files\folder")',dest='path')
+	parser=argparse.ArgumentParser(description='Remove Files or Folders. (e.g. kraken --path "C:\Program Files" --folder "some folder" OR kraken --path "C:\Program Files" --listfolders "folders.txt")')
+	parser.add_argument('--path',required=True,help='Directory path where to start looking. Use quotes (e.g. "C:\Program Files\folder" *Don\'t use slash at the end*)',dest='path')
 	parser.add_argument('--folder',required=False,help='Folder name to search and destroy',dest='folder')
 	parser.add_argument('--file',required=False,help='File name to search and destroy',dest='file')
 	parser.add_argument('--listfolders',required=False,help='Text file with a list of folders to search and destroy',dest='list_of_folders')
