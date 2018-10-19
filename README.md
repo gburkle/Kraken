@@ -7,7 +7,7 @@ Use it under your own risk.
  くコ:彡
  
 If you release the kraken, it will find and destroy any folder or files you want to eliminate. 
-(Only Tested on Windows system). 
+(Only Tested on Windows system - Python 3.7.0). 
 
 
 Current functionality: 
@@ -25,4 +25,4 @@ Future functionality:
 
 Function "YES/NO" from http://code.activestate.com/recipes/577058/
 
-Tested on Python 3.7.0
+
