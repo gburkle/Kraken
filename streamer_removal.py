@@ -80,7 +80,7 @@ def devour_streamer(path):
 def devour_prey(path, file=False):
 	"DELETE FOUND FOLDERS OR FILES"
 		
-	filehandle = open('kraken.log','a')
+	filehandle = open('streamer_removal.log','a')
 	
 
 	if file == False:
