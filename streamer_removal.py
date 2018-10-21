@@ -1,5 +1,5 @@
 #!/usr/bin/env python3 -tt
-#-*- coding: UTF-8 -*-
+#-*- coding: UTF-8 -*- 
 """
 Remove all instances (Folders and links) of streamerdata malware. 
 """
