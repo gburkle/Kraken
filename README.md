@@ -28,6 +28,6 @@ Function "YES/NO" from http://code.activestate.com/recipes/577058/
 
 EXTRA: streamer_removal.py
 
-This script will find and delete any instances of streamerdata "hidden" folder and streamer malware links. 
+This script will find and delete any instances of streamerdata "hidden" folders, and streamer malware links. 
 
 
