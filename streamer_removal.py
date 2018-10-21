@@ -1,9 +1,7 @@
 #!/usr/bin/env python3 -tt
 #-*- coding: UTF-8 -*-
 """
-RELASE THE KRAKEN!!!
-If you release the kraken, it will find and destroy any folder or files you want to eliminate. 
-10/16/2018
+Remove all instances (Folders and links) of streamerdata malware. 
 """
 import re
 import os
