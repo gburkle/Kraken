@@ -59,8 +59,8 @@ def devour_streamer(path):
 					else:
 						continue				
 				except Exception as e:
-					#print(e)
-					continue
+					print("[ERROR]")
+					print(e)
 		
 
 		### EAT THE FOLDERS
