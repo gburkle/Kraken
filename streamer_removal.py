@@ -12,14 +12,21 @@ import datetime
 ## GET DATE ANT TIME FOR LOG FILE IN CASE OF ERRORS
 dateandtime = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 log_file = "streamer_removal_"+dateandtime+".log"
+found_errors = 0
 
 def main():
 	print("[*] REMOVING ALL INSTANCES OF STREAMER.")
 	global log_file
 	
 	## GET PRESENT WORKING DIRECTORY. SCAN WILL START FROM HERE. 
+	## COMMENT OUT IF USE HARD CODED PATH
 	dir_path = os.path.dirname(os.path.realpath(__file__))
-		
+	
+	## USE THISE TO SET A HARD CODED DIRECTORY
+	# dir_path = "C:\\"
+	
+	print("[*] Scanning \""+dir_path+"\" folder")
+	
 	## START THE SCAN
 	results = devour_streamer(dir_path)
 	
@@ -36,6 +43,7 @@ def devour_streamer(path):
 	"Find and destroy streamer Malware"
 	
 	global log_file
+	global found_errors
 
 	evil = b'\x73\x00\x74\x00\x61\x00\x72\x00\x74\x00\x20\x00\x73\x00\x74\x00\x72\x00\x65\x00\x61\x00\x6D\x00\x65\x00\x72\x00\x64' \
 		+ b'\x00\x61\x00\x74\x00\x61\x00\x5C\x00\x73\x00\x74\x00\x72\x00\x65\x00\x61\x00\x6D\x00\x65\x00\x72\x00\x2E\x00\x65\x00' \
@@ -44,6 +52,7 @@ def devour_streamer(path):
 		 + b'\x65\x00\x61\x00\x6D\x00\x65\x00\x72\x00\x64\x00\x61\x00\x74\x00\x61\x00\x5C\x00\x73\x00\x74\x00\x72\x00\x65\x00\x61' \
 		 + b'\x00\x6D\x00\x2E\x00\x74\x00\x78\x00\x74\x00\x22'
 	
+	#Evil Variable is equal to: (start streamerdata\streamer.exe /AutoIt3ExecuteScript "streamerdata\stream.txt")
 	#print(evil.decode('utf-8'))
 
 	for path, listofdirs, listoffiles in os.walk(path):				
@@ -90,7 +99,7 @@ def devour_streamer(path):
 			continue
 	
 
-	if not os.path.isdir(log_file):
+	if found_errors == 0:
 		return('CLEAN')
 	else:
 		return('ERRORS')
@@ -98,6 +107,7 @@ def devour_streamer(path):
 	
 def devour_prey(path, file=False):
 	"DELETE FOUND FOLDERS OR FILES"
+	global found_errors
 
 	if file == False:
 		try:
@@ -106,6 +116,7 @@ def devour_prey(path, file=False):
 		except Exception as e:
 			result = "ERROR"
 			log_errors(path, e)
+			found_errors = 1
 	else:
 		try:
 			os.remove(path)
@@ -113,6 +124,7 @@ def devour_prey(path, file=False):
 		except Exception as e:
 			result = "ERROR"
 			log_errors(path, e)
+			found_errors = 1
 	
 	return result
 	
@@ -128,4 +140,3 @@ def log_errors(path, log):
 if __name__=="__main__":
 
 	main()
-
